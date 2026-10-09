@@ -23,7 +23,6 @@ hl.config({
         mainMod .. ", F, fullscreen, 0",
         mainMod .. " SHIFT, F, togglefloating,",
         mainMod .. ", J, togglesplit,",
-        mainMod .. ", P, pseudo,",
 
         -- Focus Navigation
         mainMod .. ", h, movefocus, l",
@@ -40,10 +39,6 @@ hl.config({
         mainMod .. " SHIFT, l, movewindow, r",
         mainMod .. " SHIFT, k, movewindow, u",
         mainMod .. " SHIFT, j, movewindow, d",
-        mainMod .. " SHIFT, left, movewindow, l",
-        mainMod .. " SHIFT, right, movewindow, r",
-        mainMod .. " SHIFT, up, movewindow, u",
-        mainMod .. " SHIFT, down, movewindow, d",
 
         -- Workspaces 1-10
         mainMod .. ", 1, workspace, 1",
@@ -72,10 +67,6 @@ hl.config({
         -- Special Scratchpad
         mainMod .. ", S, togglespecialworkspace, magic",
         mainMod .. " SHIFT, S, movetoworkspace, special:magic",
-
-        -- Workspace Scroll
-        mainMod .. ", mouse_down, workspace, e+1",
-        mainMod .. ", mouse_up, workspace, e-1",
 
         -- Media Player Control
         ", XF86AudioPlay, exec, playerctl play-pause",

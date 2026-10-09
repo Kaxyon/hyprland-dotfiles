@@ -25,16 +25,12 @@ hl.config({
             range = 15,
             render_power = 3,
             color = "rgba(1a1a1aee)",
-            color_inactive = "rgba(00000000)",
         },
 
         blur = {
             enabled = true,
             size = 8,
             passes = 3,
-            new_optimizations = true,
-            ignore_opacity = true,
-            popups = true,
         },
     },
 
@@ -66,24 +62,9 @@ hl.config({
         },
     },
 
-    gestures = {
-        workspace_swipe = true,
-        workspace_swipe_fingers = 3,
-        workspace_swipe_distance = 300,
-    },
-
-    dwindle = {
-        pseudotile = true,
-        preserve_split = true,
-        force_split = 2,
-    },
-
     misc = {
-        force_default_wallpaper = 0,
         disable_hyprland_logo = true,
         disable_splash_rendering = true,
-        vfr = true,
-        vrr = 1,
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
     },
