@@ -1,0 +1,171 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 8,
+
+    // Module Placement
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "network",
+        "tray",
+        "custom/power"
+    ],
+
+    // Workspaces Config
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󰮯",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    // Active Window Title
+    "hyprland/window": {
+        "format": "<span>{title}</span>",
+        "max-length": 35,
+        "rewrite": {
+            "": "Desktop",
+            "kitty": "Terminal",
+            "(.*) — Mozilla Firefox": "Firefox: $1",
+            "(.*) - Visual Studio Code": "VSCode: $1"
+        },
+        "separate-outputs": true
+    },
+
+    // Launcher Icon
+    "custom/launcher": {
+        "format": "󰣇",
+        "on-click": "rofi -show drun -theme ~/.config/rofi/launcher.rasi",
+        "tooltip": false
+    },
+
+    // Clock & Date
+    "clock": {
+        "format": "󰥔 {:%H:%M}",
+        "format-alt": "󰃭 {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#cba6f7'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                "weeks": "<span color='#89b4fa'><b>W{}</b></span>",
+                "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+                "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // CPU Usage
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "interval": 2,
+        "on-click": "kitty --title btop btop"
+    },
+
+    // Memory Usage
+    "memory": {
+        "format": "󰘚 {percentage}%",
+        "interval": 2,
+        "on-click": "kitty --title btop btop"
+    },
+
+    // Pulseaudio / Pipewire
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "on-click": "pavucontrol",
+        "on-click-right": "~/.config/hypr/scripts/volume_brightness.sh volume_mute",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    // Screen Brightness
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+
+    // Battery Indicator
+    "battery": {
+        "states": {
+            "good": 85,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    // Network Status
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 Wired",
+        "format-disconnected": "󰤭 Offline",
+        "tooltip-format": "󰈀 {ifname} via {gwaddr}",
+        "on-click": "nm-connection-editor"
+    },
+
+    // System Tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    // Power Menu Button
+    "custom/power": {
+        "format": "󰐥",
+        "on-click": "~/.config/hypr/scripts/powermenu.sh",
+        "tooltip": false
+    }
+}

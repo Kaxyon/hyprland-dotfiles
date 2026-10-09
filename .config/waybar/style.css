@@ -1,0 +1,198 @@
+/* ==============================================================================
+ * WAYBAR CSS STYLESHEET
+ * Catppuccin Mocha Floating Pill Aesthetic
+ * ============================================================================== */
+
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color mauve #cba6f7;
+@define-color pink #f5c2e7;
+@define-color lavender #b4befe;
+@define-color red #f38ba8;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* Global Pill Container Styling */
+#custom-launcher,
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#tray,
+#custom-power {
+    background-color: rgba(30, 30, 46, 0.85); /* Semi-transparent Catppuccin Base */
+    color: @text;
+    border-radius: 12px;
+    padding: 4px 12px;
+    margin: 4px 2px;
+    border: 1px solid rgba(203, 166, 247, 0.2); /* Subtle Mauve border */
+    transition: all 0.3s ease;
+}
+
+#custom-launcher:hover,
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#network:hover,
+#custom-power:hover {
+    background-color: @surface0;
+    border-color: @mauve;
+}
+
+/* Launcher Module */
+#custom-launcher {
+    color: @mauve;
+    font-size: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+/* Workspaces Module */
+#workspaces {
+    padding: 2px 6px;
+}
+
+#workspaces button {
+    color: @subtext0;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin: 2px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background-color: @surface1;
+    color: @text;
+}
+
+#workspaces button.active {
+    background-color: @mauve;
+    color: @base;
+    min-width: 20px;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @base;
+}
+
+/* Active Window */
+#window {
+    color: @lavender;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+/* Clock Module */
+#clock {
+    color: @mauve;
+    font-size: 14px;
+}
+
+/* CPU & Memory */
+#cpu {
+    color: @sapphire;
+}
+
+#memory {
+    color: @blue;
+}
+
+/* Audio & Brightness */
+#pulseaudio {
+    color: @pink;
+}
+
+#pulseaudio.muted {
+    color: @subtext0;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+/* Battery Module */
+#battery {
+    color: @green;
+}
+
+#battery.charging, #battery.plugged {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @peach;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Network Module */
+#network {
+    color: @lavender;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+/* Tray Module */
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Power Menu Module */
+#custom-power {
+    color: @red;
+    font-size: 15px;
+    padding-left: 12px;
+    padding-right: 14px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @base;
+    }
+}

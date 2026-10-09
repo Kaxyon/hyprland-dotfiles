@@ -1,0 +1,36 @@
+/* ==============================================================================
+ * ROFI GLOBAL CONFIGURATION
+ * Catppuccin Mocha Theme
+ * ============================================================================== */
+
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    icon-theme:                 "Papirus-Dark";
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-filebrowser:        "FILES";
+    display-window:             "WINDOW";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+    font:                       "JetBrainsMono Nerd Font 11";
+}
+
+@theme "/dev/null"
+
+* {
+    bg-col:                     #1e1e2e;
+    bg-col-light:               #313244;
+    border-col:                 #cba6f7;
+    selected-col:               #313244;
+    mauve:                      #cba6f7;
+    blue:                       #89b4fa;
+    fg-col:                     #cdd6f4;
+    fg-col-sub:                 #a6adc8;
+    grey:                       #6c7086;
+    highlight:                  bold #cba6f7;
+
+    width:                      650px;
+    background-color:           transparent;
+    text-color:                 @fg-col;
+}

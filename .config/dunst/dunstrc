@@ -1,0 +1,74 @@
+# ==============================================================================
+# DUNST NOTIFICATION DAEMON CONFIGURATION
+# Minimal Catppuccin Mocha Toasts
+# ==============================================================================
+
+[global]
+    monitor = 0
+    follow = mouse
+    width = (300, 400)
+    height = 120
+    offset = 15x15
+    origin = top-right
+    alignment = left
+    vertical_alignment = center
+    ellipsize = middle
+
+    corner_radius = 12
+    border_size = 2
+    border_color = "#cba6f7"
+    gap_size = 8
+
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_min_width = 150
+    progress_bar_max_width = 350
+    progress_bar_corner_radius = 4
+
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 14
+    text_icon_padding = 10
+
+    frame_color = "#cba6f7"
+    separator_color = frame
+
+    font = JetBrainsMono Nerd Font 10
+    line_height = 0
+    format = "<b>%s</b>\n%b"
+
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/
+
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus-Dark
+
+    sticky_history = yes
+    history_length = 20
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa"
+    timeout = 4
+
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#cba6f7"
+    timeout = 6
+
+[urgency_critical]
+    background = "#1e1e2e"
+    foreground = "#f38ba8"
+    frame_color = "#f38ba8"
+    timeout = 0

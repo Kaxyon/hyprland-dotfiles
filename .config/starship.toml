@@ -1,0 +1,65 @@
+# Starship Prompt Configuration
+# Catppuccin Mocha Minimal Prompt
+
+add_newline = true
+
+format = """
+$os\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$rust\
+$golang\
+$nodejs\
+$python\
+$docker_context\
+$line_break\
+$character"""
+
+[os]
+disabled = false
+style = "bold lavender"
+
+[os.symbols]
+Arch = "󰣇 "
+Linux = "󰌽 "
+
+[directory]
+style = "bold mauve"
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = "󰘬 "
+style = "bold pink"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "([$all_status$ahead_behind]($style) )"
+
+[c]
+symbol = " "
+style = "bold blue"
+
+[rust]
+symbol = " "
+style = "bold peach"
+
+[golang]
+symbol = " "
+style = "bold sapphire"
+
+[nodejs]
+symbol = " "
+style = "bold green"
+
+[python]
+symbol = " "
+style = "bold yellow"
+
+[character]
+success_symbol = "[❯](bold mauve)"
+error_symbol = "[❯](bold red)"
